@@ -10,6 +10,7 @@
 #import "NSMutableString+TagReplace.h"
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
+#import "WPAttributedSymbolModel.h"
 
 NSString* kWPAttributedMarkupLinkName = @"WPAttributedMarkupLinkName";
 
@@ -21,8 +22,8 @@ NSString* kWPAttributedMarkupLinkName = @"WPAttributedMarkupLinkName";
     NSMutableArray* tags = [[NSMutableArray alloc] initWithCapacity:16];
     NSMutableString* ms = [self mutableCopy];
     
-    [ms replaceOccurrencesOfString:@"<br>" withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, ms.length)];
-    [ms replaceOccurrencesOfString:@"<br />" withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, ms.length)];
+    [ms replaceOccurrencesOfString: [NSString stringWithFormat:@"%@br%@", WPAttributedSymbolModel.startSymbol, WPAttributedSymbolModel.endSymbol] withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, ms.length)];
+    [ms replaceOccurrencesOfString: [NSString stringWithFormat:@"%@br /%@", WPAttributedSymbolModel.startSymbol, WPAttributedSymbolModel.endSymbol] withString:@"\n" options:NSCaseInsensitiveSearch range:NSMakeRange(0, ms.length)];
     
     [ms replaceAllTagsIntoArray:tags];
     

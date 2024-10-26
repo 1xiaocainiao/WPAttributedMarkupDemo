@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C3675F2CCCC6EB007395D3 /* WPAttributedSymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3675E2CCCC6EB007395D3 /* WPAttributedSymbolModel.m */; };
 		A67D293519EEBD7A00C5C1AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D293419EEBD7A00C5C1AF /* main.m */; };
 		A67D293819EEBD7A00C5C1AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D293719EEBD7A00C5C1AF /* AppDelegate.m */; };
 		A67D293B19EEBD7A00C5C1AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D293A19EEBD7A00C5C1AF /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C3675D2CCCC6EB007395D3 /* WPAttributedSymbolModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPAttributedSymbolModel.h; sourceTree = "<group>"; };
+		04C3675E2CCCC6EB007395D3 /* WPAttributedSymbolModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPAttributedSymbolModel.m; sourceTree = "<group>"; };
 		A67D292F19EEBD7A00C5C1AF /* WPAttributedMarkupDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPAttributedMarkupDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67D293319EEBD7A00C5C1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A67D293419EEBD7A00C5C1AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				A6CB281719F5081000984786 /* WPTappableLabel.m */,
 				A6CB281919F508C500984786 /* WPHotspotLabel.h */,
 				A6CB281A19F508C500984786 /* WPHotspotLabel.m */,
+				04C3675D2CCCC6EB007395D3 /* WPAttributedSymbolModel.h */,
+				04C3675E2CCCC6EB007395D3 /* WPAttributedSymbolModel.m */,
 			);
 			name = Extras;
 			path = ../Extras;
@@ -237,6 +242,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -281,6 +287,7 @@
 				A6A4538B19F0233A00F5661B /* NSMutableString+TagReplace.m in Sources */,
 				A67D293B19EEBD7A00C5C1AF /* ViewController.m in Sources */,
 				A6CB281519F502D900984786 /* WPAttributedStyleAction.m in Sources */,
+				04C3675F2CCCC6EB007395D3 /* WPAttributedSymbolModel.m in Sources */,
 				A6CB281B19F508C500984786 /* WPHotspotLabel.m in Sources */,
 				A67D293819EEBD7A00C5C1AF /* AppDelegate.m in Sources */,
 				A67D293519EEBD7A00C5C1AF /* main.m in Sources */,
@@ -408,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WPAttributedMarkupDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WPAttributedMarkupDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -7,16 +7,20 @@
 //
 
 #import "NSMutableString+TagReplace.h"
+#import "WPAttributedSymbolModel.h"
 
 @implementation NSMutableString (TagReplace)
 
 -(BOOL)replaceFirstTagItoArray:(NSMutableArray*)array
 {
-    NSRange openTagRange = [self rangeOfString:@"<"];
+    NSString *startSymbol = [WPAttributedSymbolModel startSymbol];
+    NSString *endSymbol = [WPAttributedSymbolModel endSymbol];
+    
+    NSRange openTagRange = [self rangeOfString: startSymbol];
     if (openTagRange.length == 0) {
         return NO;
     }
-    NSRange closeTagRange = [self rangeOfString:@">" options:NSCaseInsensitiveSearch range:NSMakeRange(openTagRange.location+openTagRange.length, self.length - (openTagRange.location+openTagRange.length))];
+    NSRange closeTagRange = [self rangeOfString:endSymbol options:NSCaseInsensitiveSearch range:NSMakeRange(openTagRange.location+openTagRange.length, self.length - (openTagRange.location+openTagRange.length))];
     if (closeTagRange.length == 0) {
         return NO;
     }
@@ -25,11 +29,11 @@
     NSString* tag = [self substringWithRange:range];
     [self replaceCharactersInRange:range withString:@""];
     
-    BOOL isEndTag = [tag rangeOfString:@"</"].length == 2;
+    BOOL isEndTag = [tag rangeOfString: [NSString stringWithFormat:@"%@/", startSymbol]].length == 2;
     
     if (isEndTag) {
         // Find matching open tag
-        NSString* openTag = [tag stringByReplacingOccurrencesOfString:@"</" withString:@"<"];
+        NSString* openTag = [tag stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@/", startSymbol] withString:startSymbol];
         NSInteger count = array.count;
         for (NSInteger i=count-1; i>=0; i--) {
             NSDictionary* dict = array[i];
